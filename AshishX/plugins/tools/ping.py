@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from AshishX import app
-from AshishX.core.call import Ayush
+from AshishX.core.call import ASHISH
 from AshishX.utils import bot_sys_stats
 from AshishX.utils.decorators.language import language
 from AshishX.utils.inline import supp_markup
@@ -19,7 +19,7 @@ async def ping_com(client, message: Message, _):
         photo=PING_IMG_URL,
         caption=_["ping_1"].format(app.mention),
     )
-    pytgping = await Ayush.ping()
+    pytgping = await ASHISH.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(

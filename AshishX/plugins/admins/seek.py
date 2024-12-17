@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from AshishX import YouTube, app
-from AshishX.core.call import Ayush
+from AshishX.core.call import ASHISH
 from AshishX.misc import db
 from AshishX.utils import AdminRightsCheck, seconds_to_min
 from AshishX.utils.inline import close_markup
@@ -56,7 +56,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     if "index_" in file_path:
         file_path = playing[0]["vidid"]
     try:
-        await Ayush.seek_stream(
+        await ASHISH.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),

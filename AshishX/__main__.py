@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from AshishX import LOGGER, app, userbot
-from AshishX.core.call import Ayush
+from AshishX.core.call import ASHISH
 from AshishX.misc import sudo
 from AshishX.plugins import ALL_MODULES
 from AshishX.utils.database import get_banned_users, get_gbanned
@@ -38,9 +38,9 @@ async def init():
         importlib.import_module("AshishX.plugins" + all_module)
     LOGGER("AshishX.plugins").info("Successfully Imported Modules...")
     await userbot.start()
-    await Ayush.start()
+    await ASHISH.start()
     try:
-        await Ayush.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
+        await ASHISH.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("AshishX").error(
             "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
@@ -48,7 +48,7 @@ async def init():
         exit()
     except:
         pass
-    await Ayush.decorators()
+    await ASHISH.decorators()
     LOGGER("AshishX").info(
         "Music Bot Started Successfully, Now Gib your girlfriend chumt to @Venom_bolti_public"
     )

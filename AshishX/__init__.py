@@ -1,4 +1,4 @@
-from AshishX.core.bot import Ayush
+from AshishX.core.bot import ASHISH
 from AshishX.core.dir import dirr
 from AshishX.core.git import git
 from AshishX.core.userbot import Userbot
@@ -11,7 +11,7 @@ git()
 dbb()
 heroku()
 
-app = Ayush()
+app = ASHISH()
 userbot = Userbot()
 
 

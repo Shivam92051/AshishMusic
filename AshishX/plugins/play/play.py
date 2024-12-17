@@ -7,7 +7,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from AshishX import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from AshishX.core.call import Ayush
+from AshishX.core.call import ASHISH
 from AshishX.utils import seconds_to_min, time_to_seconds
 from AshishX.utils.channelplay import get_channeplayCB
 from AshishX.utils.decorators.language import languageCB
@@ -288,7 +288,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await Ayush.stream_call(url)
+                await ASHISH.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -512,7 +512,7 @@ async def anonymous_check(client, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("AyushPlaylists") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("ASHISHPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
